@@ -21,11 +21,17 @@ function proml {
     ;;
   esac
 
-#Set Prompt
-PS1="${TITLEBAR}\
-$BLUE[$LIGHT_GRAY\$(date +%H:%M:%S)$BLUE]$RED\u@\h:\w$WHITE\$(parse_git_branch)$GREEN\$$WHITE "
-PS2='> '
-PS4='+ '
+  #Set Prompt
+  PS1="${TITLEBAR}\
+  $BLUE[$LIGHT_GRAY\$(date +%H:%M:%S)$BLUE]$RED\u@\h:\w$WHITE\$(parse_git_branch)$GREEN\$$WHITE "
+  PS2='> '
+  PS4='+ '
+  
+  # green prompt
+  #PS1="${TITLEBAR}\
+  #$WHITE[$LIGHT_GRAY\$(date +%H:%M:%S)$WHITE]$LIGHT_GREEN\u@\h:\w$WHITE\$(parse_git_branch)$WHITE\$$WHITE "
+  #PS2='> '
+  #PS4='+ '
 }
 proml
 

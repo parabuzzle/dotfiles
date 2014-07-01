@@ -1,0 +1,3 @@
+defscrollback 4096
+hardstatus alwayslastline
+hardstatus string '%{= kw}[ %{= kb}%H%{= kw} ][ %= %{= kw}%?%-Lw%?%{= kr}(%{= kW}%n*%f %t%?(%u)%?%{= kr})%{= kw}%?%+Lw%?%?%= %{w} ][ %{r}%l%{w} ]%{w}[%{r} %d/%m/%y %C %A %{w}]%{w}'

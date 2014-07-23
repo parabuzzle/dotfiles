@@ -26,8 +26,8 @@
         whitespace = warn
 
 [filter "media"]
-        clean = git-media-clean %f
-        smudge = git-media-smudge %f
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
 
 [alias]
         rclone = clone --reference /git/cache.git/
@@ -70,7 +70,7 @@
         threads = 2
  
 [push]
-        default = matching
+	default = current
 
 [gc]
         reflogexpire = 300

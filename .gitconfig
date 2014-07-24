@@ -37,6 +37,7 @@
                         --exclude-from=.git/info/exclude \
                         -t -o -u -s -m -d
         s     = status
+        ll    = cat-file commit HEAD
         stc   = diff --stat --name-status --cached
         cat   = -p cat-file -p
         up    = !git remote update ; git gc

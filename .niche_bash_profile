@@ -1,3 +1,4 @@
+unset TMOUT
 if [ -e ~/.aliases ]; then
   source ~/.aliases
 fi

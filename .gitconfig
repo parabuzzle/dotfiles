@@ -79,6 +79,9 @@
         # create and checkout my feature branch
         fb = checkout -b
 
+        # checkout master
+        master = checkout master
+
 [pack]
         threads = 2
 

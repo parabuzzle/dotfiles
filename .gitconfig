@@ -22,12 +22,12 @@
 [merge]
         tool = vimdiff
 
-[apply] 
+[apply]
         whitespace = warn
 
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+        clean = git-media-clean %f
+        smudge = git-media-smudge %f
 
 [alias]
         rclone = clone --reference /git/cache.git/
@@ -68,11 +68,22 @@
         file-blame = !git ls-files | xargs -n1 -i{} git log -1 --pretty=format:\"%ci {}\" -- {}
         amend = commit --amend -C HEAD
 
+        # cleanup branch workspace
+        cleanup = !sh -c 'git branch | grep -v master | grep -v staging | xargs git branch -D'
+
+        # rebase off of master
+        cb = rev-parse --abbrev-ref HEAD
+        mergesha = !sh -c 'git merge-base `git cb` master'
+        rb = !sh -c 'git rebase -i `git mergesha`'
+
+        # create and checkout my feature branch
+        fb = checkout -b
+
 [pack]
         threads = 2
- 
+
 [push]
-	default = current
+        default = current
 
 [gc]
         reflogexpire = 300

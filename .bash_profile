@@ -26,7 +26,7 @@ PS1="${TITLEBAR}\
 $BLUE[$LIGHT_GRAY\$(date +%H:%M:%S)$BLUE]$RED\u@\h:\w$WHITE\$(parse_git_branch)$GREEN\$$WHITE "
 PS2='> '
 PS4='+ '
-  
+
   # green prompt
   #PS1="${TITLEBAR}\
   #$WHITE[$LIGHT_GRAY\$(date +%H:%M:%S)$WHITE]$LIGHT_GREEN\u@\h:\w$WHITE\$(parse_git_branch)$WHITE\$$WHITE "
@@ -46,3 +46,9 @@ export HD_HOME=~/tools/hd
 export HADOOP_PREFIX=~/tools/hd/hadoop
 export HBASE_HOME=~/tools/hd/hbase
 export PATH="/usr/local/share/npm/bin:/usr/local/heroku/bin:$HADOOP_PREFIX/bin:$HBASE_HOME/bin:$PATH"
+
+# Set up docker machine on login
+if [ `docker-machine ls | grep default | wc -l` -gt 0 ]; then duse default; fi
+
+# Alias git to hub if it exists
+if [ "`which hub | wc -l`" -gt "0" ]; then alias git="hub"; fi
